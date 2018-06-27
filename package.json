@@ -5,5 +5,14 @@
   "main": "index.js",
   "repository": "https://github.com/blindbane/trollo.git",
   "author": "aidanbane <aidanfbane@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
 }
