@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const trollCtrl = require('../controllers/trollCtrl');
+const trolls = require('./trolls')
 
-router.get('/trolls', trollCtrl.getAllTrolls);
+router.use('/trolls', trolls)
 
 module.exports = router;
