@@ -1,12 +1,16 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const cors = require('cors')
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const db = require('./db');
 const apiRouter = require('./api');
 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
 // TODO: configure cors for production
-app.use(cors())
+app.use(cors());
 
 app.use('/api', apiRouter);
 

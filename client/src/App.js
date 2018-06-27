@@ -8,14 +8,14 @@ import TrollList from './TrollList';
 class App extends Component {
   state = {
     trolls: [],
-  }
+  };
   componentDidMount() {
     axios
       .get('/api/trolls')
       .then(res => res.data)
       .then(({ trolls }) => {
         this.setState({
-          trolls
+          trolls,
         });
       });
   }
@@ -26,9 +26,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        
-          {this.state.trolls ? <TrollList trolls={this.state.trolls} /> : <h1>FETCHING DATA</h1>}
-        
+
+        {this.state.trolls ? <TrollList trolls={this.state.trolls} /> : <h1>FETCHING DATA</h1>}
       </div>
     );
   }
