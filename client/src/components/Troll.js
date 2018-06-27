@@ -6,7 +6,7 @@ const Troll = ({ body, title }) => {
       <div>Title: {title}</div>
       <div>The troll: {body}</div>
     </div>
-  )
+  );
 };
 
 export default Troll;
