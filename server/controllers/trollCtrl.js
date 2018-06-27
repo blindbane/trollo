@@ -13,8 +13,8 @@ const getAllTrolls = (req, res) => {
 };
 
 const addNewTroll = (req, res) => {
-  const { body } = req.body;
-  const newTroll = new Troll({ body });
+  const { body, title } = req.body;
+  const newTroll = new Troll({ body, title });
   newTroll
     .save()
     .then(troll => {

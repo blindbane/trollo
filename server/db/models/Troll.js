@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const trollSchema = mongoose.Schema({
+  title: {
+    type: String,
+    require: true,
+  },
   body: {
     type: String,
     require: true,
