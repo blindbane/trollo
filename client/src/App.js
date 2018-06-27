@@ -11,6 +11,7 @@ import AddTroll from './components/AddTroll';
 class App extends Component {
   state = {
     trolls: [],
+    givenName: undefined
   };
   componentDidMount() {
     axios
@@ -21,6 +22,12 @@ class App extends Component {
           trolls,
         });
       });
+
+      axios.get('/api/auth/current_user').then(res => res.data).then(data => {
+        this.setState({
+          givenName: data.givenName
+        })
+      })
   }
   render() {
     return (
@@ -40,6 +47,7 @@ class App extends Component {
               <Link to="/profile">PROFILE</Link>
             </li>
           </nav>
+          {this.state.givenName ? (<div>Hi, {this.state.givenName}</div>) : (<a href="/api/auth/google">Login with Google</a>)}
         </header>
         <Switch>
           <Route exact path="/" component={Home} />

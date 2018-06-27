@@ -22,7 +22,7 @@ class AddTroll extends Component {
       })
       .then(res => res.data)
       .then(data => {
-        console.log('new troll added:', data);
+        // console.log('new troll added:', data);
         this.setState({
           title: '',
           body: '',
