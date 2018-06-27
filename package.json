@@ -7,13 +7,16 @@
   "author": "aidanbane <aidanfbane@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server",
+    "dev:server": "nodemon server",
+    "dev:client": "cd ./client && yarn start",
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
     "pretty": "prettier --single-quote --print-width 120 --trailing-comma all --write \"{server,__{tests,mocks}__}/**/*.js\" "
   },
   "dependencies": {
     "express": "^4.16.3"
   },
   "devDependencies": {
+    "concurrently": "^3.6.0",
     "nodemon": "^1.17.5",
     "prettier": "1.13.6"
   }
