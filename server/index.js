@@ -1,8 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const cors = require('cors')
 const db = require('./db');
 const apiRouter = require('./api');
+
+// TODO: configure cors for production
+app.use(cors())
 
 app.use('/api', apiRouter);
 
