@@ -28,11 +28,8 @@ class App extends Component {
         <header className="App-header">
           <nav>
             <li>
-              <Link to="/">
-                HOME
-              </Link>
+              <Link to="/">HOME</Link>
             </li>
-            
             <li>
               <Link to="/trolls">TROLLS</Link>
             </li>

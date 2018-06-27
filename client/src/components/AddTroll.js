@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 class AddTroll extends Component {
   state = {
     title: '',
-    body: ''
+    body: '',
   };
 
   handleInputChange = ({ target: { name, value } }) => {
@@ -13,25 +13,26 @@ class AddTroll extends Component {
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     const { title, body } = this.state;
-    axios.post('/api/trolls', {
-      title,
-      body
-    })
-    .then(res => res.data)
-    .then(data => {
-      console.log('new troll added:', data)
-      this.setState({
-        title: '',
-        body: ''
+    axios
+      .post('/api/trolls', {
+        title,
+        body,
       })
-    })
-    .catch(error => {
-      console.error('Oh no! The troll did not post.. or something happened.  Try again. :D', error)
-    })
-    event.preventDefault()
-  }
+      .then(res => res.data)
+      .then(data => {
+        console.log('new troll added:', data);
+        this.setState({
+          title: '',
+          body: '',
+        });
+      })
+      .catch(error => {
+        console.error('Oh no! The troll did not post.. or something happened.  Try again. :D', error);
+      });
+    event.preventDefault();
+  };
 
   render() {
     return (
@@ -49,7 +50,12 @@ class AddTroll extends Component {
           </label>
           <label>
             What happened?
-            <textarea name="body" value={this.state.body} placeholder="What Happened?" onChange={this.handleInputChange} />
+            <textarea
+              name="body"
+              value={this.state.body}
+              placeholder="What Happened?"
+              onChange={this.handleInputChange}
+            />
           </label>
           <input type="submit" value="Submit" />
         </form>
