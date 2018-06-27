@@ -8,7 +8,7 @@ const trollSchema = mongoose.Schema({
   dateCreated: {
     type: Date,
     default: Date.now,
-  }
+  },
 });
 
 const Troll = mongoose.model('Troll', trollSchema);
