@@ -1,7 +1,16 @@
 import React from 'react';
 
 const Profile = () => {
-  return <div>Profile</div>;
+  return (
+    <div>
+      Profile<div>
+        <a href="/auth/google">Login with Google</a>
+      </div>
+      <div>
+        <a href="/auth/logout">LOGOUT</a>
+      </div>
+    </div>
+  );
 };
 
 export default Profile;

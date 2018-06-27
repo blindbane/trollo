@@ -42,10 +42,11 @@ class App extends Component {
           </nav>
         </header>
         <Switch>
-          <Route exact path="/" render={() => <Home />} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/trolls" render={() => <Trolls trolls={this.state.trolls} />} />
           <Route path="/trolls/add" render={() => <AddTroll />} />
           <Route path="/profile" render={() => <Profile />} />
+          <Route component={Home} />
         </Switch>
       </div>
     );
