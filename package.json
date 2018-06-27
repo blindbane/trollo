@@ -1,0 +1,9 @@
+{
+  "name": "trollo",
+  "version": "1.0.0",
+  "description": "Infinitely flexible. Incredibly easy to use. It's free. trollo keeps track of every office troll, from the big picture to the minute details.",
+  "main": "index.js",
+  "repository": "https://github.com/blindbane/trollo.git",
+  "author": "aidanbane <aidanfbane@gmail.com>",
+  "license": "MIT"
+}
