@@ -1,18 +1,6 @@
-const router = require('express').Router()
+const router = require('express').Router();
+const trollCtrl = require('../controllers/trollCtrl');
 
-router.get('/trolls', (req, res) =>
-  res.send({
-    trolls: [
-      {
-        id: 1,
-        description: 'the best troll',
-      },
-      {
-        id: 2,
-        description: 'the second best troll',
-      },
-    ],
-  }),
-);
+router.get('/trolls', trollCtrl.getAllTrolls);
 
-module.exports = router
+module.exports = router;
