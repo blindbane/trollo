@@ -15,12 +15,12 @@ var trollBill = new Troll({ body: 'What a troll' });
 //   return;
 // });
 
-Troll.find((err, trollBill) => {
-  if (err) return console.error(err);
-  console.log(trollBill);
-});
+// Troll.find((err, trollBill) => {
+//   if (err) return console.error(err);
+//   console.log(trollBill);
+// });
 
-Troll.find({ body: /^What/ }, (err, troll) => {
-  if (err) return console.error(err);
-  console.log('found a troll  ', troll);
-});
+// Troll.find({ body: /^What/ }, (err, troll) => {
+//   if (err) return console.error(err);
+//   console.log('found a troll  ', troll);
+// });
