@@ -6,6 +6,7 @@ import './App.css';
 import Home from './components/Home';
 import Trolls from './components/Trolls';
 import Profile from './components/Profile';
+import AddTroll from './components/AddTroll';
 
 class App extends Component {
   state = {
@@ -27,12 +28,16 @@ class App extends Component {
         <header className="App-header">
           <nav>
             <li>
-              <Link exact to="/">
+              <Link to="/">
                 HOME
               </Link>
             </li>
+            
             <li>
               <Link to="/trolls">TROLLS</Link>
+            </li>
+            <li>
+              <Link to="/trolls/add">REPORT A TROLL</Link>
             </li>
             <li>
               <Link to="/profile">PROFILE</Link>
@@ -41,7 +46,8 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path="/" render={() => <Home />} />
-          <Route path="/trolls" render={() => <Trolls trolls={this.state.trolls} />} />
+          <Route exact path="/trolls" render={() => <Trolls trolls={this.state.trolls} />} />
+          <Route path="/trolls/add" render={() => <AddTroll />} />
           <Route path="/profile" render={() => <Profile />} />
         </Switch>
       </div>
