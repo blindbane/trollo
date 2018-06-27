@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
 import TrollList from './TrollList';
 
 const Trolls = ({ trolls }) => {
