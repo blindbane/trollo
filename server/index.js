@@ -7,7 +7,7 @@ const cookieSession = require('cookie-session');
 const app = express();
 const db = require('./db');
 const apiRouter = require('./api');
-require('./auth');
+require('./services/auth');
 
 // TODO: configure cors for production
 app.use(cors());
@@ -24,8 +24,6 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-require('./authRoutes')(app);
 
 app.use('/api', apiRouter);
 

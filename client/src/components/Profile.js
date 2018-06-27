@@ -4,10 +4,10 @@ const Profile = () => {
   return (
     <div>
       Profile<div>
-        <a href="/auth/google">Login with Google</a>
+        <a href="/api/auth/google">Login with Google</a>
       </div>
       <div>
-        <a href="/auth/logout">LOGOUT</a>
+        <a href="/api/auth/logout">LOGOUT</a>
       </div>
     </div>
   );
