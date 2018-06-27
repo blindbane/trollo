@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Route, Link, Switch } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 
-import TrollList from './TrollList';
+import Home from './components/Home';
+import Trolls from './components/Trolls';
+import Profile from './components/Profile';
 
 class App extends Component {
   state = {
@@ -23,11 +25,25 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <nav>
+            <li>
+              <Link exact to="/">
+                HOME
+              </Link>
+            </li>
+            <li>
+              <Link to="/trolls">TROLLS</Link>
+            </li>
+            <li>
+              <Link to="/profile">PROFILE</Link>
+            </li>
+          </nav>
         </header>
-
-        {this.state.trolls ? <TrollList trolls={this.state.trolls} /> : <h1>FETCHING DATA</h1>}
+        <Switch>
+          <Route exact path="/" render={() => <Home />} />
+          <Route path="/trolls" render={() => <Trolls trolls={this.state.trolls} />} />
+          <Route path="/profile" render={() => <Profile />} />
+        </Switch>
       </div>
     );
   }
