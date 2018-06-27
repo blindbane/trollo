@@ -10,10 +10,10 @@ db.once('open', () => {
 
 var trollBill = new Troll({ body: 'What a troll' });
 
-trollBill.save((err, troll) => {
-  if (err) return console.error(err);
-  return;
-});
+// trollBill.save((err, troll) => {
+//   if (err) return console.error(err);
+//   return;
+// });
 
 Troll.find((err, trollBill) => {
   if (err) return console.error(err);
