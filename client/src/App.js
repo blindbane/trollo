@@ -42,23 +42,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header givenName={givenName} avatarUrl={avatarUrl}/>
-        {/* <header className="App-header">
-          <nav>
-            <li>
-              <Link to="/">HOME</Link>
-            </li>
-            <li>
-              <Link to="/trolls">TROLLS</Link>
-            </li>
-            <li>
-              <Link to="/trolls/add">REPORT A TROLL</Link>
-            </li>
-            <li>
-              <Link to="/profile">PROFILE</Link>
-            </li>
-          </nav>
-          {this.state.givenName ? (<div>Hi, {this.state.givenName} <span><img src={this.state.avatarUrl} alt={`${this.state.givenName} Avatar`} /></span></div>) : (<a href="/api/auth/google">Login with Google</a>)}
-        </header> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/trolls" render={() => <Trolls trolls={this.state.trolls} />} />
