@@ -8,7 +8,7 @@ const UserMenu = ({ givenName, avatarUrl }) => {
             <a href="/api/auth/logout">LOGOUT</a>
           </div>
       </span>
-      </div>) : (<a href="/api/auth/google">Login with Google</a>)}
+      </div>) : (<div><a href="/api/auth/google">SignUp</a><span>{` / `}</span><a href="/api/auth/google">SignIn</a></div>)}
     </div>
   );
 };
