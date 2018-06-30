@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserMenu from './UserMenu'
 
 const Header = ({ givenName, avatarUrl }) => {
   return (
@@ -19,7 +20,7 @@ const Header = ({ givenName, avatarUrl }) => {
               <Link to="/profile">PROFILE</Link>
             </li>
           </nav>
-          {givenName ? (<div>Hi, {givenName} <span><img src={avatarUrl} alt={`${givenName} Avatar`} /></span></div>) : (<a href="/api/auth/google">Login with Google</a>)}
+          <UserMenu givenName={givenName} avatarUrl={avatarUrl} />
         </header>
     </div>
   );

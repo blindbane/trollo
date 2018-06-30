@@ -38,13 +38,13 @@ class App extends Component {
   }
 
   render() {
-    const {givenName, avatarUrl} = this.state;
+    const { givenName, avatarUrl, trolls } = this.state;
     return (
       <div className="App">
         <Header givenName={givenName} avatarUrl={avatarUrl}/>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/trolls" render={() => <Trolls trolls={this.state.trolls} />} />
+          <Route exact path="/trolls" render={() => <Trolls trolls={trolls} />} />
           <Route path="/trolls/add" render={() => <AddTroll />} />
           <Route path="/profile" render={() => <Profile />} />
           <Route component={Home} />
