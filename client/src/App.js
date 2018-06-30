@@ -11,7 +11,10 @@ import AddTroll from './components/AddTroll';
 class App extends Component {
   state = {
     trolls: [],
-    givenName: undefined
+    givenName: undefined,
+    familyName: undefined,
+    displayName: undefined,
+    avatarUrl: undefined
   };
   componentDidMount() {
     axios
@@ -25,7 +28,10 @@ class App extends Component {
 
       axios.get('/api/auth/current_user').then(res => res.data).then(data => {
         this.setState({
-          givenName: data.givenName
+          givenName: data.givenName,
+          familyName: data.familyName,
+          displayName: data.displayName,
+          avatarUrl: data.avatarUrl
         })
       })
   }
