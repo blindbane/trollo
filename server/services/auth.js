@@ -33,6 +33,8 @@ passport.use(
         googleId: profile.id,
         givenName: profile.name.givenName,
         familyName: profile.name.familyName,
+        displayName: profile.displayName,
+        avatarUrl: profile.photos[0].value
       }).save();
 
       return done(null, user);
